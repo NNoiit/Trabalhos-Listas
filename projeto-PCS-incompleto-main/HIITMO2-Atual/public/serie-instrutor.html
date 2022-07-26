@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Importações do firebase-->
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <!--|||||||||||||||||||||||||-->
+    
+    <script  src="./js/configFirebase.js"></script>
+    <link rel="stylesheet" href="./css/pag-serie.css">
+    <link rel="stylesheet" href="./css/pag-geral.css">
+    <link rel="stylesheet" href="./css/blocos-geral.css">
+    
+
+    <title>Série</title>
+</head>
+<body onblur="">
+    <div id="barra-nav">
+        <ul>
+            <li><img src="./img/icone-barra.png" alt="logo">
+                <li><a href="inicio.html">Inicio</a>
+                <li><a href="serie-instrutor.html">Series</a>
+                <li><a href="aulas-instrutor.html">Aulas</a>
+                <li><a href="perfil.html">Perfil</a>
+        </ul>
+    </div>
+    <div id="container">
+        <div class="fichas">
+            <h1><img src="./img/treinoS.png" alt="simbolo-serie"></h1>
+            <div class="bloco-serie">
+        
+                <a id="btn-novaSerie"><button class="fab fixed bottom right">+</button></a>
+            </div>
+            <div id="div-form-serie">
+                <form id = "form-serie">
+                    <label for="cpf">Digite o CPF do Aluno:</label>
+                    <input type="cpf" name="cpf" id="cpf" placeholder="CPF do Aluno" required="required">
+                    
+                    <label for="serie">Digite o nome da sua série:</label>
+                    <input type="text" name="serie" id="serie" placeholder="Serie" required="required">
+                        <div class="lado-lado">
+                            <label for="exercicio">Exercício:<input type="exercicio" name="exercicio" id="exercicio" placeholder="Exercicio"></label>
+                           
+                            <label for="repeticoes">Repetições:<input type="number" id="repeticoes" nome="repeticoes" placeholder="Repetições"></input></label>
+                            
+
+                            <label for="quantidade"> Quantidade:<input type="number" name="quantidade" id="quantidade" placeholder="Quantidade"></label>
+                            
+                        </div>
+                    
+                    <label for="uid"></label>
+                    <input id="uid" nome="uid" style="display: none;" value="null" disabled></input>
+                    <p id="msgSerie"></p>
+                
+                    <input type="submit" id="btn-submit-evento" value="Confirmar Serie" onclick="verificaSerie(serieA.pegarSeries())">
+                </form>
+                <input type="submit" onclick="serieA.salvar()" id="btn-add" value="Adicionar">
+
+                <div class="tabela-serie">
+                    <table>
+                        <thead>
+                            <th>Exercicios</th>
+                            <th>Quantidade</th>
+                            <th>Repetições</th>
+                            <th>Ação</th>
+                        </thead>
+                        <tbody id="tbody">
+    
+                        </tbody>
+                    </table>
+    
+                </div>
+                <button onclick="serieA.pegarSeries()">classe serie</button>
+            </div>
+        </div>
+        <script src="./js/instrutor/series-instrutor.js"></script>
+        <script src="./js/instrutor/adcionar-serie.js"></script>
+    </div>
+</body>
+
+</html>

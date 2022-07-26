@@ -1,0 +1,53 @@
+/*css do bloco da tela inicial*/
+#container{
+    color: aliceblue;
+    border-radius: 9px;
+    width: 50%;
+    margin-right: 0.5%;
+    margin-top: 0.5%;
+    transition: 0.5s;
+    
+}
+.bloco-inicio{
+    margin: 3px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 15px;
+    max-width: 450px;
+}
+.bloco-inicio h1, h2, h3, h4{
+    text-align: center;
+    font-size: 1.6rem;
+    color: aliceblue;
+}
+
+.bloco-inicio button{
+    background-color: #323232;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/*css dos itens criados*/
+.bloco-cont{
+    margin: 3px;
+    background-color: #323232;
+    border-radius: 10px;
+    text-align: center;
+}
+.bloco-inicio-lado{
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    margin-top: 15px;
+    color: aliceblue;
+}
+
+div#\#container{
+    text-align: -webkit-center;
+}
+
+@media only screen and (min-width: 1290px) {
+     div#\#container{
+      display: flex;
+      text-align: center;
+    }
+  }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/externo-geral.css">
+
+    <title>Login</title>
+</head>
+<body>
+    <div id = "container">
+        <h1><img src="./img/essa.png" alt="logo"></h1>
+        <div id="registrar-form">
+            <div class="box-conteiner">
+
+                <label for="login">Login:</label>
+                <input type="text" name="login" id="login" placeholder="Digite seu login">
+
+                <label for="password">Senha:</label>
+                <input type="password" name="senhaLogin" id="senhaLogin" placeholder="Senha">
+                <p id="textoLogin"></p>
+
+            </div>
+            <button class="btn-geral" value="Logar" onclick="login()">Logar</button>
+
+        </div>
+    </div>
+
+        <!--Importações do firebase-->
+        <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"> </script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+        <!--|||||||||||||||||||||||||-->
+        
+    <script  src="./js/configFirebase.js"></script>
+    <script  src="./js/jsLogin.js"></script>
+    
+</body>
+</html>

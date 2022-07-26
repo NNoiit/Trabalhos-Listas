@@ -1,0 +1,106 @@
+/*Geral*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #323232;
+    border: none;
+}
+
+.bloco-cont{
+    width: 50%;
+    height: 50%;
+    background-color: #323232;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bloco-cont:hover{
+    background-color: #323232;
+}
+
+body{
+    padding-top: 5vh;
+    background-color: rgba(0, 0, 0, 0.795);
+}
+p{
+    margin-bottom: 5px;
+}
+
+input{
+    display: block;
+    width: 100%;
+}
+
+input:focus{
+    outline: none;
+}
+
+
+/*confg informações fichas*/
+#container{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container h1, h2{
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+#container h2{
+    margin-bottom: 45px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+label{
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+input{
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    font-size: .9rem;
+    margin-bottom: 20px;
+}
+
+input:focus{
+    border-color: yellow;
+}
+
+
+/*botões*/
+.btn-geral{
+    border-bottom: 2px solid #323232;
+    background-color: #323232;
+    border-radius: 3px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+.btn-geral:hover{
+    border-bottom: 2px solid yellow;
+}
+
+/*msg de erro*/
+.msg-erro{
+    color: red;
+    position: absolute;
+    top: 57px;
+    font-size: .8em;
+}
+
+.template{
+    display: none;
+}

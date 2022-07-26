@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Importações do firebase-->
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <!--|||||||||||||||||||||||||-->
+    
+    <script  src="./js/configFirebase.js"></script>
+
+    <link rel="stylesheet" href="./css/pag-geral.css">
+    <link rel="stylesheet" href="./css/pag-perfil.css">
+
+    <title>Perfil</title>
+</head>
+<body>
+    <div id="barra-nav">
+    </div>
+    <div id="container">
+        <h1><img src="./img/icone-perfil-p.png" alt="simbolo-perfil"></h1>
+        <div class="perfil">
+                <div id="perfil-bloco">
+                    <label for="name">Nome:</label>
+                    <input id="nome" type=text disabled>
+                    <label for="email">E-mail:</label>
+                    <input id="email" type="text" disabled>
+                    <label for="cpf">CPF:</label>
+                    <input id="cpf" type=text disabled>
+                    <p id="atention"></p>
+                    <button class="btn-medio" onclick="logout()">Logoff</button>
+                    <button typer="button" class="btn-medio" id="alterar-perfil" onclick="recuperarSenha()">Alterar Senha</button>
+                </div>
+        </div>
+    </div>
+    
+    <script  src="./js/perfil.js"></script>
+    <script  src="./js/tipoUser.js"></script>
+    <script src="./js/loading.js"></script>
+</body>
+
+</html>

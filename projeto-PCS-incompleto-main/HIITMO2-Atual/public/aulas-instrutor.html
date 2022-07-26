@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Importações do firebase-->
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <!--|||||||||||||||||||||||||-->
+
+    <script  src="./js/configFirebase.js"></script>
+    <link rel="stylesheet" href="./css/pag-geral.css">
+    <link rel="stylesheet" href="./css/blocos-geral.css">
+    <title>Evento</title>
+</head>
+<body>
+    <div id="barra-nav">
+        <ul>
+            <li><img src="./img/icone-barra.png" alt="logo">
+                <li><a href="inicio.html">Inicio</a>
+                <li><a href="serie-instrutor.html">Series</a>
+                <li><a href="aulas-instrutor.html">Aulas</a>
+                <li><a href="perfil.html">Perfil</a>
+        </ul>
+    </div>
+    <div id="container">
+        <div class="fichas">
+            <h1><img src="./img/eventoS.png" alt="simbolo-aula"></h1>
+
+            <div class="bloco-aula">
+                <a id="btn-novaAula"><button class="fab fixed bottom right">+</button></a>
+            </div>
+
+            <div id="div-form-aula" style="display: none;">
+                <form id="form-aula">
+                    <label for="aula">Digite um nome para a aula:</label>
+                    <input name="aula" id="aula" placeholder="Aula" required="required">
+                    <div class="lado-lado">
+                    <label for="text">Digite a data da Aula: <input type="date" id="date" onchange="verificaData()"></label>
+                    
+                    
+                    <label for="lotacao">Digite uma lotaçao maxima a aula:<input type="number" name="lotacao" id="lotacao" placeholder="Lotacão" required="required"></label>
+                    </div>
+                    
+                    <label for="text">Digite uma breve descrição da Aula</label>
+                    <input type="text" nome="descAula" id= "descAula" placeholder="Descrção da Aula">
+                    
+                    <label for="uid"></label>
+                    <input id="uid" nome="uid" style="display: none;" value="null" disabled></input>
+                    
+                    <p id="form-atention"></p>
+
+                    <button  class="btn-geral" type="submit" id="btn-submit-evento" >Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/instrutor/aula-instrutor.js"></script>
+    
+</body>
+</html>

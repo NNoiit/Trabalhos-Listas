@@ -1,0 +1,16 @@
+.perfil{
+    border: none;
+    width: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+}
+.perfil input{
+    width: 100%;
+    border-radius: 10px;
+}
+.container > .perfil > #altera-senha{
+    display: none;
+}

@@ -1,0 +1,25 @@
+form#form-serie{
+    padding: 9px;
+    text-align: left;
+}
+form#form-serie div.lado-lado{
+    display: flex;
+    width: 100%;
+}
+
+form#form-serie div.lado-lado label{
+    margin: auto;
+    margin-left: 6px;
+    text-align: center;
+}
+input#btn-submit-evento{
+    margin-bottom: 1px;
+}
+table{
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+table tr, th{
+    border: hidden;
+}

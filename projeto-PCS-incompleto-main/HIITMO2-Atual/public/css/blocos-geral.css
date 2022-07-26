@@ -1,0 +1,48 @@
+/*cadastrar serie*/
+div#div-form-serie{
+    display: none;
+}
+/*botões da serie*/
+input[type="submit"]{
+    background-color: #323232;
+    color: #fff;
+    border-radius: 3px;
+    height: 40px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    border-color: yellow;
+}
+
+/*config serie*/
+
+textarea{
+    margin: 3px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border: 10px;
+    border-color: #323232;
+
+    /*testes de css para o text area*/
+    resize: none;
+
+}
+
+.bloco-cont{
+    margin: 3px;
+    background-color: #323232;
+    border-radius: 9px;
+    color:aliceblue;
+}
+.bloco-desc:hover .bloco-cont{
+    transition: 0.5s;
+    display: block;
+}
+
+.bloco-aula button{
+    border-radius: 9px;
+    background-color: rgba(32, 32, 32, 0.09);
+}

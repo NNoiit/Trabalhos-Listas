@@ -1,0 +1,167 @@
+/*zerando as marges da ágina*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    border: none;
+}
+
+/*config menu das paginas*/
+#barra-nav{
+    padding: 2vh;
+    background-color: #fff;
+    border-bottom: 2px solid #323232;
+    font-size: .9rem;
+    margin-bottom: 20px;
+}
+
+#barra-nav > ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 25px;
+}
+
+/*links*/
+#barra-nav a{
+    text-decoration: none;
+    color: black;
+}
+
+#barra-nav a:hover{
+    color: yellow;
+}
+
+/*confgs de texto*/
+#container {
+    text-align: center;
+}
+
+#container h1, h2{
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+label{
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+/*confg das fichas a serem preenchidas no site*/
+.fichas{
+    background-color: rgba(32, 32, 32, 0.09);
+    border-radius: 30px;
+    padding: 15px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input{
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    font-size: .9rem;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    width: 100%;
+
+}
+
+input:focus{
+    border-color: yellow;
+    outline: none;
+}
+
+/*botões*/
+.btn-geral{
+    border-bottom: 2px solid #323232;
+    background-color: #323232;
+    border-radius: 3px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid #323232;
+    
+}
+.btn-geral:hover{
+    border-bottom: 2px solid yellow;
+}
+
+/*botão sair*/
+button#btn-voltar{
+    margin-left: 15%;
+    background-color: #afa8a8;
+    border-radius: 3px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    color: #fff;
+}
+button#btn-voltar:hover{
+    border-bottom: 2px solid yellow;
+}
+
+/*botão flutuante*/
+button.fab{
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    border: none;
+    font-size: 27px;
+    box-shadow: 2px 2px 2px #323232;
+}
+
+button.fab:hover{
+    background-color: yellow;
+}
+
+button.fab.fixed{
+    position: fixed;
+}
+
+button.fab.bottom{
+    bottom: 32px;
+}
+
+button.fab.right{
+    right: 32px;
+}
+
+/*botão medio*/
+
+button.btn-medio{
+    margin: 10px;
+    background-color: #323232;
+    border-radius: 3px;
+    height: 40px;
+    width: 15vh;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid #323232;
+}
+button.btn-medio:hover{
+    border-bottom: 2px solid yellow;
+}
+
+/*config select*/
+
+.select-geral{
+    -webkit-appearance: none;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 9px;
+    text-align: center;
+}
+
+/*config de imputs*/
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+}
+
