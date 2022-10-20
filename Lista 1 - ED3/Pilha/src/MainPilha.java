@@ -10,6 +10,7 @@ public class MainPilha
 		Pilha pilha2 = new Pilha(20);
 		String s;
 		char c;
+		
 				
 		System.out.println("Entre com uma frase: ");
 		s = scanner.nextLine();
@@ -28,23 +29,22 @@ public class MainPilha
 				i--;
 			}
 
-			if(c != "A" || c != "B"){
+			if(c != 'A' || c != 'B'){
 				i = s.length()-1;
 			}
 
 		}
-
-		verifica_inverso(pilha, s)? System.out.println("Está correto"): System.out.println("Está incorreto");
+		
+		verifica_inverso(pilha1, pilha2);
 		
 		scanner.close();
 	}
 
 	//Q - 1 Verificação de contrario
-	public boolean verifica_inverso(Pilha pilha1, Pilha pilha2){
+	public static boolean verifica_inverso(Pilha pilha1, Pilha pilha2){
 		char x, y;
-		int cont = 0;
 		
-		while(pilha1.vazia()!){
+		while((!pilha1.vazia())){
 
 			x = pilha1.pop();
 			y = pilha2.pop();
@@ -53,7 +53,7 @@ public class MainPilha
 				return false;
 			}
 
-			if(x != "A"|| x != "B"|| y != "A"|| y != "B"){
+			if(x != 'A'|| x != 'B'|| y != 'A'|| y != 'B'){
 				break;
 			}
 		}
@@ -61,17 +61,18 @@ public class MainPilha
 		return true;
 	}
 
-	public boolean verifica_cadeia(){
+	public boolean verifica_cadeia(Pilha pilha){
 
 		while(pilha.vazia()){
 			
-			Pilha x = pilha.pop();
+			char x = pilha.pop();
 
 			
-			if(x == "D"){
+			if(x == 'D'){
 
 			}
 		}
+		return false;
 	}
 
 }
