@@ -34,19 +34,20 @@ public class MainPilha
 
 		}
 
-		verifica_inverso(pilha, s);
+		verifica_inverso(pilha, s)? System.out.println("Está correto"): System.out.println("Está incorreto");
 		
 		scanner.close();
 	}
 
 	//Q - 1 Verificação de contrario
-	public boolean verifica_inverso(Pilha pilha, String frase){
+	public boolean verifica_inverso(Pilha pilha1, Pilha pilha2){
 		char x, y;
+		int cont = 0;
 		
-		for(Int i = 0; i < frase.length(); i++;){
+		while(pilha1.vazia()!){
 
-			x = frase.charAt(i);
-			y = pilha.pop();
+			x = pilha1.pop();
+			y = pilha2.pop();
 
 			if(x != y){
 				return false;
@@ -62,6 +63,15 @@ public class MainPilha
 
 	public boolean verifica_cadeia(){
 
+		while(pilha.vazia()){
+			
+			Pilha x = pilha.pop();
+
+			
+			if(x == "D"){
+
+			}
+		}
 	}
 
 }
