@@ -15,7 +15,7 @@ public class MainPilha
 		System.out.println("Entre com uma frase: ");
 		s = scanner.nextLine();
 		
-		int i = 0;
+		int i = 0, x = 0;
 		
 		while (i < s.length())
 		{
@@ -29,7 +29,11 @@ public class MainPilha
 				i--;
 			}
 
-			if(c != 'A' || c != 'B'){
+			if((c != 'A' || c != 'B')){
+				if(x==1 && (c != 'A' || c != 'B')){
+					break;
+				}
+				x = 1;
 				i = s.length()-1;
 			}
 
