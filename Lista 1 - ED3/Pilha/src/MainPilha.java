@@ -74,13 +74,16 @@ public class MainPilha
 	
 	
 	//Q - 1 Verificação de contrario
-	public static boolean verifica_inverso(Pilha pilha1, Pilha pilha2){
-		char x, y;
-		
-		while(!pilha1.vazia() || !pilha2.vazia()){
+	public static boolean verifica_inverso(Pilha pilha){
 
-			x = pilha1.pop();
-			y = pilha2.pop();
+		Pilha pilha_aux = new Pilha(20);
+		char x, y;
+
+		
+		while(!pilha.vazia()){
+
+			x = pilha.pop();
+			pilha2.pop(x);
 
 			if(x != y){
 				return false;
