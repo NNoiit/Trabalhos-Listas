@@ -10,8 +10,7 @@ public class MainPilha
 		switch(opc){
 			case 1:
 			
-				Pilha pilha1 = new Pilha(20);
-				Pilha pilha2 = new Pilha(20);
+				Pilha pilha_q1 = new Pilha(20);
 				String s;
 				char c;
 				
@@ -19,29 +18,17 @@ public class MainPilha
 				System.out.println("Entre com uma frase: ");
 				s = scanner.nextLine();
 				
-				int i = 0, x = 0;
+				int i = 0;
 				
 				while (i < s.length())
 				{
 					c = s.charAt(i);
-					if((i == 'A'|| i == 'B') && x == 0){
-						pilha1.push(c);
-						i++;
-					} else if((i == 'A'|| i == 'B') && x == 1){
-						pilha2.push(c);
-						i--;
-					}
-		
-					if(((c != 'A' || c != 'B'))){
-						if(x==1 && (c != 'A' || c != 'B')){
-							break;
-						}
-						x = 1;
-						i = s.length()-1;
-					}
+					pilha_q1.push(c);
+					i++;
+
 				}
 				
-				if(verifica_inverso(pilha1, pilha2)){
+				if(verifica_inverso(pilha_q1)){
 					Sistem.out.println("Correto");
 				} else{
 					Sistem.out.println("Incorreto");
@@ -50,20 +37,21 @@ public class MainPilha
 
 			case 2:
 
-				Pilha pilha1_q2 = new Pilha(20);
+				Pilha pilha_q2 = new Pilha(20);
 
-				int i = 0, x = 0;
-				
+				int i = 0;
 				while (i < s.length())
 				{
 					c = s.charAt(i);
-					pilha1_q2.push(c);
+					pilha_q2.push(c);
 					i++;
-
-					if(c == 'D'){
-					}
 				}
 
+				if(verifica_cadeia(pilha_q2)){
+					Sistem.out.println("Correto");
+				} else {
+					Sistem.out.println("Incorreto");
+				}
 
 			}
 
@@ -78,19 +66,26 @@ public class MainPilha
 
 		Pilha pilha_aux = new Pilha(20);
 		char x, y;
+		boolean controler = true;
 
 		
 		while(!pilha.vazia()){
 
 			x = pilha.pop();
-			pilha2.pop(x);
 
-			if(x != y){
-				return false;
+			if((x == 'A'|| x == 'B') && controler){
+				pilha2.pop(x);
+			} else {
+				controler = false;
 			}
 
-			if(x != 'A'|| x != 'B'|| y != 'A'|| y != 'B'){
-				return false;
+			if(!controler){
+				x = pilha.pop();
+				y = pilha.pop();
+
+				if(x != y){
+					return false;
+				}
 			}
 		}
 
@@ -102,13 +97,24 @@ public class MainPilha
 
 		while(pilha.vazia()){
 			
-			char x = pilha.pop();
+			char c = pilha.pop();
 
-			
-			if(x == 'D'){
-
+			if(c == 'D'){
+				
+				if(verifica_inverso(pilha)){
+					continue;
+				} else {
+					Sistem.out.println("Uma das varieveis não está no formato xCy. Incorreto!!!");
+					break;
+				}
 			}
+			
 		}
+
+		if(pilha.vazia()){
+			return true;
+		}
+
 		return false;
 	}
 
