@@ -95,18 +95,24 @@ public class MainPilha
 	//Q - 2 Verificação formato aDbDc
 	public boolean verifica_cadeia(Pilha pilha){
 
-		while(pilha.vazia()){
+		Pilha pilha_aux = new Pilha(20);
+
+		while(!pilha.vazia()){
 			
 			char c = pilha.pop();
+			
 
 			if(c == 'D'){
 				
-				if(verifica_inverso(pilha)){
+				if(verifica_inverso(pilha_aux)){
+					pilha.esvazia_pilha(pilha_aux);
 					continue;
 				} else {
 					Sistem.out.println("Uma das varieveis não está no formato xCy. Incorreto!!!");
 					break;
 				}
+			} else {
+				pilha_aux.push(c);
 			}
 			
 		}
