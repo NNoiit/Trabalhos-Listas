@@ -74,14 +74,14 @@ public class MainPilha
 			x = pilha.pop();
 
 			if((x == 'A'|| x == 'B') && controler){
-				pilha2.pop(x);
+				pilha_aux.pop(x);
 			} else {
 				controler = false;
 			}
 
 			if(!controler){
 				x = pilha.pop();
-				y = pilha.pop();
+				y = pilha_aux.pop();
 
 				if(x != y){
 					return false;

@@ -78,6 +78,4 @@ public class Pilha
 
 		return elemento;
 	}
-
-	
 }
