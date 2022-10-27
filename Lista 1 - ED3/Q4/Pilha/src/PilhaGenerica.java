@@ -34,7 +34,7 @@ public class PilhaGenerica<T>
 		}
 		else
 		{
-			//Impressão para fins didáticos
+			//Impressï¿½o para fins didï¿½ticos
 			System.out.println("Pilha vazia: pop nao funcionou.");
 			return null;
 		}
@@ -49,7 +49,7 @@ public class PilhaGenerica<T>
 		}
 		else
 		{
-			//Impressão para fins didáticos
+			//Impressï¿½o para fins didï¿½ticos
 			System.out.println("Pilha cheia: push nao funcionou.\n");
 			return false;
 		}
@@ -63,5 +63,20 @@ public class PilhaGenerica<T>
 	     }
 	     else
 	    	 return false;
-	}	
+	}
+
+	public static PilhaGenerica<T> retira_elem(PilhaGenerica<T> pilha,T elem_r){
+		PilhaGenerica<T> pilha_aux = new Pilha<>(20);
+		T comparador;
+
+		while(!pilha.vazia()){
+			comparador = pilha.pop();
+
+			if(!comparador.equals(elem_r)){
+				pilha_aux.push(comparador);
+			}
+		}
+
+		return pilha_aux;
+	}
 }
