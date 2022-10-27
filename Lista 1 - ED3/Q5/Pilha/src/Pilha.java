@@ -79,6 +79,8 @@ public class Pilha
 		return elemento;
 	}
 
+
+	//Q5 -------------------------
 	public boolean verifica_balanceamento(Pilha pilha){
 
 		Pilha pilha_aux = new Pilha(20);
