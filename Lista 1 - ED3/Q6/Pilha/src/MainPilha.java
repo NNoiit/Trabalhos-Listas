@@ -7,7 +7,7 @@ public class MainPilha
 		Scanner scanner = new Scanner(System.in);
 		
 		Pilha pilha = new Pilha(20);
-		String s;
+		String s, resp = "";
 		char c;
 				
 		System.out.println("Entre com uma frase: ");
@@ -22,15 +22,9 @@ public class MainPilha
 			i++;
 		}
 		
-		System.out.println("Frase invertida: ");
-		
-		while (!pilha.vazia()) {
-			c = pilha.pop();
-			System.out.print(c);
-		}
-		
-		System.out.print("\n");
-		
+		resp += inverte_palavra(pilha, resp);
+		System.out.println(resp);
+
 		scanner.close();
 	}
 }

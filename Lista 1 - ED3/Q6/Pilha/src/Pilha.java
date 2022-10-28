@@ -79,18 +79,46 @@ public class Pilha
 		return elemento;
 	}
 
-	public static String inverte_frase(Pilha pilha){
-		Pilha pilha_aux = new Pilha(50);
-		Pilha pilha_result = new Pilha(50);
-		Char c;
+	//Q6
+	public static String inverte_palavra(Pilha pilha, String resp){
+		Pilha pilha_aux = new Pilha();
+		char c, b;
+		String resp1 = "";
+
+		/*while(!pilha.vazia()){
+			c = pilha.pop()
+
+			if(c == ' '){
+				while(!pilha_aux.vazia()){
+					b = pilha_aux.pop();
+					if(resp != " "){
+						resp = resp + " " + b;	
+					} else {
+						resp = +b;
+					}
+				}
+			}
+
+			pilha_aux.push(c);
+		}*/
 
 		while(!pilha.vazia()){
 			c = pilha.pop()
 
-			if(c == '/n'){
-
+			if(c == ' '){
+				b = pilha_aux.pop();
+				resp1 += resp + " " + b;
+				break;
 			}
+
+			pilha_aux.push(c);
 		}
 
+		if(!pilha.vazia()){
+			inverte_palavra(pilha, resp1);
+		}
+
+		return resp;
+		
 	}
 }
