@@ -20,6 +20,8 @@ public class Posfixada
 		System.out.println("Entre com expressao posfixada: ");
 		
 		expressao = scan.next();
+
+		convert_posfixa(expressao);
 	}
 	
 	// Testa se simbolo corrente � um operador
