@@ -106,8 +106,10 @@ public class Pilha
 			c = pilha.pop()
 
 			if(c == ' '){
+				while(!pilha_aux.vazia()){
 				b = pilha_aux.pop();
 				resp1 += resp + " " + b;
+				}
 				break;
 			}
 
