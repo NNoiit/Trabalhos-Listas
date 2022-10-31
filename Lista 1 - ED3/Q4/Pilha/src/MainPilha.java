@@ -2,22 +2,25 @@ import java.util.Scanner;
 
 public class MainPilha
 {
-	public static void main(String args[])
+	public static <T> void main(String args[])
 	{
 
 		Scanner scanner = new Scanner(System.in);
 
-		PilhaGenerica<T> pilha = new PilhaGenerica<>(20);
-		T entrada, remove;
+		PilhaGenerica<Integer> pilha = new PilhaGenerica<>(20);
+		Integer remove = 3, objetos = 1;
+		int i = 0;
+
+		while(i < 10){
+			pilha.push(objetos);
+			objetos++;
+			i++;
+		}
+
+
 		
-		System.out.println("Digite a pilha: ");
-		entrada = scanner.nextLine();
-		System.out.println("Digite o caractere a ser removido da pilha: ");
-        remove = scanner.next();
-
-
 		//Removendo um item da pilha
-        pilha.retira_elemr(entrada, resul);
+        System.out.println(PilhaGenerica.retira_elem(pilha, remove));
 		
 		scanner.close();
 	}

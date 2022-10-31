@@ -81,27 +81,28 @@ public class Pilha
 
 
 	//Q5 -------------------------
-	public boolean verifica_balanceamento(Pilha pilha){
+	public static boolean verifica_balanceamento(Pilha pilha){
 
 		Pilha pilha_aux = new Pilha(20);
-
-		char c, memoria = '';
+		char c, memoria = ' ';
 		//boolean resul = false, ordem = false;
 		//int conchetes = 0, chaves = 0, parenteses = 0;
 		while(!pilha.vazia()){
 			c = pilha.pop();
 
 			if(c == '[' || c == ']'){
-				conchetes++;
-
-				if(memoria == ''){
+				if(memoria == ' '){
 					pilha_aux.push(c);
 					memoria = pilha_aux.pop();
 				} else if(memoria == '(' || memoria == '[' || memoria == '{'){
 					if(c == '(' || c == '[' || c == '{'){
 						pilha_aux.push(memoria);
-						pilha_aux.push(c);
+						memoria = c;
 					} else if (c == ']' && memoria == '['){
+						
+						if(!pilha_aux.vazia()){
+							memoria = pilha_aux.pop();
+						}
 						continue;
 					} else {
 						return false;
@@ -110,16 +111,18 @@ public class Pilha
 			}
 
 			if(c == '{' || c == '}'){
-				chaves++;
-
-				if(memoria == ''){
+				if(memoria == ' '){
 					pilha_aux.push(c);
 					memoria = pilha_aux.pop();
 				} else if( memoria == '(' || memoria == '[' || memoria == '{'){
 					if(c == '(' || c == '[' || c == '{'){
 						pilha_aux.push(memoria);
-						pilha_aux.push(c);
+						memoria = c;
 					} else if (c == '}' && memoria == '{'){
+						
+						if(!pilha_aux.vazia()){
+							memoria = pilha_aux.pop();
+						}
 						continue;
 					} else {
 						return false;
@@ -128,16 +131,18 @@ public class Pilha
 			}
 
 			if(c == '(' || c == ')'){
-				parenteses++;
-
-				if(memoria == ''){
+				if(memoria == ' '){
 					pilha_aux.push(c);
 					memoria = pilha_aux.pop();
 				} else if( memoria == '(' || memoria == '[' || memoria == '{'){
 					if(c == '(' || c == '[' || c == '{'){
 						pilha_aux.push(memoria);
-						pilha_aux.push(c);
+						memoria = c;
 					} else if (c == ')' && memoria == '('){
+						
+						if(!pilha_aux.vazia()){
+							memoria = pilha_aux.pop();
+						}
 						continue;
 					} else {
 						return false;
@@ -145,6 +150,7 @@ public class Pilha
 				}
 			}
 		}
+		return true;
 
 		/*if(conchetes%2 == 0 && chaves%2 == 0 && parenteses%2 == 0){
 			return true;

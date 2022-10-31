@@ -7,22 +7,19 @@ public class MainPilha
 		Scanner scanner = new Scanner(System.in);
 		
 		Pilha pilha = new Pilha(20);
-		String s;
+		String s = "[abcde{efg]}";
 		char c;
 				
-		System.out.println("Entre com uma frase: ");
-		s = scanner.nextLine();
+		int i = s.length()-1;
 		
-		int i = 0;
-		
-		while ( i < s.length() )
+		while ( i >= 0 )
 		{
 			c = s.charAt(i);
 			pilha.push(c);
-			i++;
+			i--;
 		}
 
-		if(verifica_balanceamento(pilha)){
+		if(Pilha.verifica_balanceamento(pilha)){
 			System.out.println("Balanceado");
 		} else {
 			System.out.println("Não balanceado");

@@ -19,9 +19,22 @@ public class Posfixada
 	{
 		System.out.println("Entre com expressao posfixada: ");
 		
-		expressao = scan.next();
+		expressao = "(1+((2+3)*(4*5)))";
 
-		convert_posfixa(expressao);
+		//Covertendo em pilha
+		Pilha pilha = new Pilha(20);
+		char c;
+		
+		int i = 0;
+		
+		while ( i < expressao.length() )
+		{
+			c = expressao.charAt(i);
+			pilha.push(c);
+			i++;
+		}
+
+		convert_posfixa(pilha);
 	}
 	
 	// Testa se simbolo corrente � um operador
@@ -96,6 +109,8 @@ public class Posfixada
 	}
 
 	public static String convert_posfixa(Pilha pilha){
+		Pilha pilha1 = new Pilha(20);
+		Pilha pilha2 = new Pilha(20);
 		String infixa = "";
 		char c;
 		int cont = 0;

@@ -65,18 +65,32 @@ public class PilhaGenerica<T>
 	    	 return false;
 	}
 
-	public static PilhaGenerica<T> retira_elem(PilhaGenerica<T> pilha,T elem_r){
-		PilhaGenerica<T> pilha_aux = new Pilha<>(20);
-		T comparador;
+	public static PilhaGenerica<Integer> retira_elem(PilhaGenerica<Integer> pilha,Object resul){
+		PilhaGenerica<Integer> pilha_aux = new PilhaGenerica<>(20);
+		Integer comparador;
 
 		while(!pilha.vazia()){
 			comparador = pilha.pop();
 
-			if(!comparador.equals(elem_r)){
+			if(!comparador.equals(resul)){
 				pilha_aux.push(comparador);
 			}
 		}
 
+		devolve_pilha(pilha_aux);
+		
 		return pilha_aux;
+	}
+
+	public static void devolve_pilha(PilhaGenerica<Integer> pilha){
+
+		Integer c;
+
+		if(!pilha.vazia()){
+			c = pilha.pop();
+
+			System.out.println(c);
+			devolve_pilha(pilha);
+		}
 	}
 }

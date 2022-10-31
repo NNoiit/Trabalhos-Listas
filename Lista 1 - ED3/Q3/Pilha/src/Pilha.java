@@ -80,19 +80,18 @@ public class Pilha
 	}
 
 	//Q2 -  metodo criado para solucionar o problema da pilha_aux permanecer cheia
-	public static esvazia_pilha(Pilha pilha){
+	public static void esvazia_pilha(Pilha pilha){
 		if(!pilha.vazia()){
 			pilha.pop();
-		} else{
 			esvazia_pilha(pilha);
 		}
 	}
 
 	//Q3
-	public static Cahr[] vetor_pilhas(Pilha entrada1, Pilha entrada2, int tamanho){
+	public static char[] vetor_pilhas(Pilha entrada1, Pilha entrada2, int tamanho){
 
-		Char array[] = new char[tamanho];
-		Char c;
+		char array[] = new char[tamanho];
+		char c;
 		int contador = 0, contador2 = tamanho;
 
 		while(contador < tamanho){
@@ -103,6 +102,7 @@ public class Pilha
 				if(contador != contador2 && contador < contador2){
 					array[contador] = c;
 				}
+				contador++;
 			}
 
 			//checa se a primeira pilha ainda possui elementos, pega um elemento dela, checa se pode ser adicionado no "topo" superior do array e adiciona
@@ -112,6 +112,7 @@ public class Pilha
 				if(contador != contador2 && contador2 > contador){
 					array[contador2-1] = c;
 				}
+				contador2--;
 				
 			}
 
@@ -120,8 +121,6 @@ public class Pilha
 				break;
 			}
 
-			contador++;
-			contador2--;
 		}
 
 		//retorna o array com as duas pilhas

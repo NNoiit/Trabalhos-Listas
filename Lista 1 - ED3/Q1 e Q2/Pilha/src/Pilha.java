@@ -80,10 +80,9 @@ public class Pilha
 	}
 
 	//Q2 -  metodo criado para solucionar o problema da pilha_aux permanecer cheia
-	public static esvazia_pilha(Pilha pilha){
+	public static void esvazia_pilha(Pilha pilha){
 		if(!pilha.vazia()){
 			pilha.pop();
-		} else{
 			esvazia_pilha(pilha);
 		}
 	}

@@ -5,19 +5,18 @@ public class MainPilha
 	public static void main(String args[])
 	{
 		Scanner scanner = new Scanner(System.in);
-		int opc = scanner.next();
+		System.out.println("Escolha entre a questão (1) ou (2)");
+		int opc = scanner.nextInt();
+		String s = "ABBCBBA", s2 = "ABBCBBADABACABA";
+		char c;
+		
 
 		switch(opc){
 			case 1:
 
 			
 				Pilha pilha_q1 = new Pilha(20);
-				String s;
-				char c;
 				
-						
-				System.out.println("Entre com uma frase: ");
-				s = scanner.nextLine();
 				
 				int i = 0;
 				
@@ -30,9 +29,9 @@ public class MainPilha
 				}
 				
 				if(verifica_inverso(pilha_q1)){
-					Sistem.out.println("Correto");
+					System.out.println("Correto");
 				} else{
-					Sistem.out.println("Incorreto");
+					System.out.println("Incorreto");
 				}
 			break;
 			
@@ -40,21 +39,22 @@ public class MainPilha
 
 				Pilha pilha_q2 = new Pilha(20);
 
-				int i = 0;
-				while (i < s.length())
+				i = 0;
+				while (i < s2.length())
 				{
-					c = s.charAt(i);
+					c = s2.charAt(i);
 					pilha_q2.push(c);
 					i++;
 				}
 
-				if(verifica_cadeia(pilha_q2)){
-					Sistem.out.println("Correto");
+				if(verifica_cadeia(pilha_q2) && s != ""){
+					System.out.println("Correto");
 				} else {
-					Sistem.out.println("Incorreto");
+					System.out.println("Incorreto");
 				}
 			break;
-			
+			}
+			scanner.close();
 		}
 
 	
@@ -63,16 +63,19 @@ public class MainPilha
 	public static boolean verifica_inverso(Pilha pilha){
 
 		Pilha pilha_aux = new Pilha(20);
-		char x, y;
+		char x = ' ', y;
 		boolean controler = true;
 
 		
 		while(!pilha.vazia()){
 
-			x = pilha.pop();
+			if(controler){
+				x = pilha.pop();
+			}
+				
 
 			if((x == 'A'|| x == 'B') && controler){
-				pilha_aux.pop(x);
+				pilha_aux.push(x);
 			} else {
 				controler = false;
 			}
@@ -91,7 +94,7 @@ public class MainPilha
 	}
 
 	//Q - 2 Verificação formato aDbDc
-	public boolean verifica_cadeia(Pilha pilha){
+	public static boolean verifica_cadeia(Pilha pilha){
 
 		Pilha pilha_aux = new Pilha(20);
 
@@ -106,7 +109,7 @@ public class MainPilha
 					pilha.esvazia_pilha(pilha_aux);
 					continue;
 				} else {
-					Sistem.out.println("Uma das varieveis não está no formato xCy. Incorreto!!!");
+					System.out.println("Uma das varieveis não está no formato xCy. Incorreto!!!");
 					break;
 				}
 			} else {

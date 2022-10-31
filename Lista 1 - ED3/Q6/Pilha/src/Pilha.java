@@ -82,8 +82,9 @@ public class Pilha
 	//Q6
 	public static String inverte_palavra(Pilha pilha, String resp){
 		Pilha pilha_aux = new Pilha();
-		char c, b;
+		char c = '\n', b;
 		String resp1 = "";
+		
 
 		/*while(!pilha.vazia()){
 			c = pilha.pop()
@@ -103,24 +104,35 @@ public class Pilha
 		}*/
 
 		while(!pilha.vazia()){
-			c = pilha.pop()
 
-			if(c == ' '){
+			if(!pilha.vazia()){
+				c = pilha.pop();
+			}
+
+			if(c == ' '|| pilha.vazia()){
+				if(pilha.vazia()){
+					pilha_aux.push(c);
+				}
+				
 				while(!pilha_aux.vazia()){
 				b = pilha_aux.pop();
-				resp1 += resp + " " + b;
+				if(resp1 == ""){
+					resp1 += resp + b;
+				} else{
+					resp1 += b;
+				}
+				
 				}
 				break;
 			}
-
+		
 			pilha_aux.push(c);
 		}
 
-		if(!pilha.vazia()){
-			inverte_palavra(pilha, resp1);
+		if(pilha.vazia()){
+			return resp1;
 		}
-
-		return resp;
-		
+		resp1+= " ";
+		return inverte_palavra(pilha, resp1);
 	}
 }
