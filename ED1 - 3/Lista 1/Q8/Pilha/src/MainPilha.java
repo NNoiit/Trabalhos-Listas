@@ -8,25 +8,26 @@ public class MainPilha
 		
 		Pilha pilha = new Pilha(20);
 		String pares = "";
-		
-		int[] array_N = new int[10]; 
-		int i = 0;
+		char c; 
+		char[] array_N = new char[10]; 
+		int i = 1;
 
 		while ( i < array_N.length)
 		{
-			array_N[i] = i;
+			array_N[i] = (char)i;
 			i++;
 		}
 		
-		i = 0;
+		i = array_N.length - 1;
 
-		while ( i < array_N.length)
+		while ( i > 0)
 		{	
-			pilha.push(array_N[i]);
-			i++;
+			c = Integer.toString(array_N[i]).charAt(0);
+			pilha.push(c);
+			i--;
 		}
 		
-		Pilha.subsequencias(pilha, pares)
+		Pilha.subsequencias(pilha, pares);
 		System.out.print("\n");
 		
 		scanner.close();

@@ -120,7 +120,7 @@ public class Posfixada
 			c = pilha.pop();
 
 			if(c == ')' || c == '('){
-				if(cont_simbolo = 1 && cont == 1 && s == ' '){
+				if(cont_simbolo == 1 && cont == 1 && s == ' '){
 					infixa += pilha1.pop();
 					infixa += pilha2.pop();
 				}
