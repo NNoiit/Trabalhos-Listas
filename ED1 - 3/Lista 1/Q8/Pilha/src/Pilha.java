@@ -2,7 +2,7 @@ public class Pilha
 {
 	private int n;
 	private char vetor[];
-	private int topo;
+	private static int topo;
 	
 	public Pilha()
 	{
@@ -79,31 +79,35 @@ public class Pilha
 		return elemento;
 	}
 
-	public static String subsequencias(Pilha pilha, String pares){
+	//Q7 -  Recebe uma pilha convertida, inicia um loop parando quando "i" alcança o topo, x serve para alterar o tipo do dado retirado da pilha e concatenar ele na string resul, dentro do lop é verificado se resul é igual a 4 em tamanho para que seja comparado os valores da primeira pocisção e a terceira, uma vez a terceira sendo maior, é visto como um par e adicionado a string "pares". Ao final da pilha é retornado todos os pares e durante o processo é printado todos os sub conjuntos
+	public static void subsequencias(Pilha pilha, String pares){
 		
-		Pilha pilha_aux = new Pilha();
-		int c, i = 0;
+		char c;
+		int  i = 0, x;
 		String resul= "";
 
 		
 		c = pilha.pop();
-				
-		resul += c + "\n";
-		System.out.println(resul);
+	
+		while(i < topo){
+			x = Integer.parseInt(String.valueOf(c)) + i;
+			resul +=(x) + " ";
 
-		
-		while(i> this.topo){
-			resul += " " + (c + 1) + "\n";
-
-			if(resul.charAt(i) < resul.charAt(i+1)){
-				pares += "("+ resul.charAt(i+1) + "," + resul.charAt(i) + ")"
+			if(resul.length() == 4){
+				if(resul.charAt(0) < resul.charAt(2)){
+					pares += "("+ resul.charAt(2) + "," + resul.charAt(0) + ")";
+				}
 			}
 			System.out.println(resul);
 			i++;
 		}
 
 		if(!pilha.vazia()){
-			subsequencias(pilha);
+			subsequencias(pilha, pares);
+		}
+
+		if(pilha.vazia()){
+			System.out.println(pares);
 		}
 
 	}
