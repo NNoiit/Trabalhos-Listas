@@ -17,11 +17,12 @@ public class Posfixada
 	// L� express�o para ser avaliada
 	public void leExpressao()
 	{
-		System.out.println("Entre com expressao posfixada: ");
+		System.out.println("Resultado da entrada ");
 		
+		//Entrada do enunciado
 		expressao = "(1+((2+3)*(4*5)))";
 
-		//Covertendo em pilha
+		//Covertendo a entrada em pilha
 		Pilha pilha = new Pilha(20);
 		char c;
 		
@@ -33,11 +34,12 @@ public class Posfixada
 			pilha.push(c);
 			i++;
 		}
-
-		convert_posfixa(pilha);
+		///////////////////////////////////
+	 //////retornando a entrada no formato de pos fixada
+		expressao = convert_posfixa(pilha);
 	}
 	
-	// Testa se simbolo corrente � um operador
+	
 	private boolean eOperador(char simbolo)
 	{
 		if (simbolo == '*' || simbolo == '+' || 
@@ -47,14 +49,12 @@ public class Posfixada
 		return false;
 	}
 
-	// Aplica operador aos dois s�mbolos do topo da pilha
-	// Retorna verdadeiro se opera��o realizada com sucesso, 
-	// falso caso contr�rio
+
 	private boolean aplicaOperador(char operador)
 	{
 		Integer operando1 = 0, operando2 = 0;
 
-		// Desempilha dois operandos
+		
 		operando1 = pilha.pop();
 		operando2 = pilha.pop();
 		
@@ -108,32 +108,49 @@ public class Posfixada
 		return true;
 	}
 
+
+	//Q7 ---- transformando em posfixada para assim realizar a resolução
 	public static String convert_posfixa(Pilha pilha){
 		Pilha pilha1 = new Pilha(20);
 		Pilha pilha2 = new Pilha(20);
 		String infixa = "";
-		char c;
-		int cont = 0;
+		char c, s = ' ';
+		int cont = 0, cont_simbolo = 0;
 		while(!pilha.vazia()){
 			c = pilha.pop();
-			if(c == ')'){
+
+			if(c == ')' || c == '('){
 				continue;
-			} else if(c != '+' || c != '*' || c != '-'){
+			} else if(c >= '0' && c <= '9'){
 				cont++;
 				pilha1.push(c);
 				c = pilha.pop();
+
+				if(s != ' ' && cont_simbolo == 1 && cont == 1){
+					pilha2.push(s);
+				}
 			} 
-			
+
 			if (c == '+' || c == '*' || c == '-'){
 				pilha2.push(c);
-				c = pilha.pop();
+				cont_simbolo = 1;
+			}
+
+			if(cont == 0 && cont_simbolo == 1 && !pilha2.vazia()){
+				s = pilha2.pop();
 			}
 
 			if(cont == 2){
 				infixa += pilha1.pop();
 				infixa += pilha1.pop();
 				infixa += pilha2.pop();
+
+				if(s != ' '){
+					infixa+= s;
+				}
+
 				cont = 0;
+				cont_simbolo = 0;
 			}
 			
 		}
@@ -144,6 +161,7 @@ public class Posfixada
 				infixa += pilha1.pop();
 			}
 			infixa += pilha2.pop();
+
 		}
 
 		return infixa;
