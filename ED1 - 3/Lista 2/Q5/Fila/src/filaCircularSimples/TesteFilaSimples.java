@@ -32,7 +32,7 @@ public class TesteFilaSimples extends Fila
 		System.out.println("0. Fim.");
 		System.out.print("Opcao: ");
 		escolha = scanner.nextInt();
-		
+		scanner.close();
 		return escolha;
 	}
 }

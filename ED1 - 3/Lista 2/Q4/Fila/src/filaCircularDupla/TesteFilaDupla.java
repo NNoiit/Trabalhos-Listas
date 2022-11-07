@@ -14,7 +14,7 @@ public class TesteFilaDupla extends FilaDupla
 		int i, j;
 		
 		if(vazia())
-			System.out.println("Fila está vazia");
+			System.out.println("Fila estï¿½ vazia");
 		else
 			for (i = ini, j = 1; j <= n; j = j + 1, i = (i + 1) % tamanho)
 				System.out.println(j + " " + vetor[i]);
@@ -28,14 +28,14 @@ public class TesteFilaDupla extends FilaDupla
 		System.out.println("--------------------------");
 		System.out.println("Selecione a opcao:");
 		System.out.println("1. Insere elemento no fim da fila.");
-		System.out.println("2. Remove elemento do início da fila.");
-		System.out.println("3. Insere elemento no início da fila.");
+		System.out.println("2. Remove elemento do inï¿½cio da fila.");
+		System.out.println("3. Insere elemento no inï¿½cio da fila.");
 		System.out.println("4. Remove elemento do fim da fila.");  
-		System.out.println("5. Imprime elementos a partir do início da fila.");
+		System.out.println("5. Imprime elementos a partir do inï¿½cio da fila.");
 		System.out.println("0. Fim.");
 		System.out.println("Opcao: ");
 		escolha = scanner.nextInt();
-		
+		scanner.close();
 		return escolha;
 	}
 }

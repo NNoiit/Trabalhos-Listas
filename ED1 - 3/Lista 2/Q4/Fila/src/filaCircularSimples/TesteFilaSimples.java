@@ -13,7 +13,7 @@ public class TesteFilaSimples extends Fila
 		int i, j;
 		
 		if (vazia())
-			System.out.println("Fila está vazia.");
+			System.out.println("Fila estï¿½ vazia.");
 		else
 			for (i = ini, j = 1; j <= n; j = j + 1, i = (i + 1) % tamanho)
 				System.out.println(j + " " + vetor[i]);
@@ -32,7 +32,7 @@ public class TesteFilaSimples extends Fila
 		System.out.println("0. Fim.");
 		System.out.print("Opcao: ");
 		escolha = scanner.nextInt();
-		
+		scanner.close();
 		return escolha;
 	}
 }

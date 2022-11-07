@@ -58,7 +58,7 @@ public class Fila
 
 	//Q3
 	public void fila_pilha(Pilha pilhaF){
-		FilaGeneriaca<Fila> fila_pilha = new FilaGenerica<>;
+		FilaGenerica<Pilha> fila_pilha = new FilaGenerica<>(20);
 
 		if(!fila_pilha.cheia()){
 			fila_pilha.insere(pilhaF);
@@ -66,7 +66,7 @@ public class Fila
 	}
 
 	public void pilha_fila(Fila filaP){
-		PilhaGenerica<Pilha> pilha_fila = new PilhaGenerica<>;
+		PilhaGenerica<Fila> pilha_fila = new PilhaGenerica<>(20);
 
 		if(!pilha_fila.cheia()){
 			pilha_fila.push(filaP);
@@ -74,10 +74,10 @@ public class Fila
 	}
 
 	public void fila_fila(Fila filaF){
-		FilaGeneriaca<Fila> fila_fila = new FilaGenerica<>;
+		FilaGenerica<Fila> fila_fila = new FilaGenerica<>(20);
 
-		if(!fila_pilha.cheia()){
-			fila_pilha.insere(filaF);
+		if(!fila_fila.cheia()){
+			fila_fila.insere(filaF);
 		}		
 	}
 }

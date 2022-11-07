@@ -1,17 +1,19 @@
 package filaCircularSimples;
 
-public class FilaGenerica
+import java.util.Vector;
+
+public class FilaGenerica<T>
 {
 	/* Atributos protected para serem usados na subclasse. */
 	protected int tamanho;	/* Tamanho do vetor */
-	protected Vetor<T> vetor;	/* Vetor de elementos */
+	protected Vector<T> vetor;	/* Vetor de elementos */
 	protected int ini;	/* Posicao do proximo elemento a ser retirado */
 	protected int n;	/* Numero de elementos na fila */
 	
-	public Fila(int tam)
+	public FilaGenerica(int tam)
 	{
 		tamanho = tam;
-		vetor = new Vetor<T>(tamanho);
+		vetor = new Vector<T>();
 		ini = 0;
 		n = 0;
 	}
@@ -29,7 +31,7 @@ public class FilaGenerica
 	//Retiramos o elemento do in�cio da fila
 	public T remove()
 	{
-		T elemento = Integer.MIN_VALUE;
+		T elemento = null;
 		
 		if (!this.vazia())
 		{
@@ -42,13 +44,13 @@ public class FilaGenerica
 	}
 	
 	//Inserimos o elemento no final da fila
-	public boolean insere(T elemento)
+	public boolean insere(T filaF)
 	{
 	  int fim;
 	  
 	  if ( !cheia() ) {
 	    fim = (ini + n) % tamanho;
-	    vetor.add(fim, elemento);
+	    vetor.add(fim, filaF);
 	    n++;
 	    return true;
 	  } 
