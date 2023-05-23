@@ -164,7 +164,7 @@ public class ListaDuplamente
 		return l1;
 	}
 
-	// Exercicio 2 - Complexidade O(n*m)
+	// Exercicio 1 - Complexidade O(n*m)
 	public ListaDuplamente intersecao(ListaDuplamente l1, ListaDuplamente l2){
 		ListaDuplamente l3 = new ListaCircularDuplamente();
 
@@ -261,6 +261,4 @@ public class ListaDuplamente
 		return (elo1.dado == elo2.dado) && verificaIgualdadeRecursiva(elo1.prox, elo2.prox);
 	}
 
-	
-	
 }

@@ -158,31 +158,46 @@ public class ListaCircular extends Lista
 		return l2;
 	}
 
-	//Exercicio 3 - Complexidade O(n)
+	//Exercicio 2 - Complexidade O(n)
 	public ListaCircular merge(ListaCircular lista2){
 
-		ListaCircular lCorrente = new ListaCircular();
-
-		lCorrente.insere(0);
-		lCorrente.insere(4);
-		lCorrente.insere(8);
-
+		ListaCircular lCorrente = this;
 		ListaCircular lResul = new ListaCircular();
+
+		boolean verificador = false;
 
 		Elo p1 = lista2.prim, p2 = lCorrente.prim;
 		do{
-			lResul.insere(p1.dado);
-			lResul.insere(p2.dado);
+			if(verificador == false){
+				lResul.insere(p1.dado);
+				lResul.insere(p2.dado);
 
+				p1 = p1.prox;
+				p2 = p2.prox;
+			}
 			
-			p1 = p1.prox;
-			p2 = p2.prox;
 
-		}while(p1 != lista2.prim);
+			if(p1 != lista2.prim){
+				verificador = true;
+			}
+
+			if(verificador ==  true){
+				if(p1 != lista2.prim){
+					lResul.insere(p1.dado);
+					p1 = p1.prox;
+				}
+				if(p2 != lCorrente.prim){
+					lResul.insere(p2.dado);
+					p2 = p2.prox;
+				}
+			}
+
+		}while(p1 != lista2.prim || p2 != lCorrente.prim);
 
 		return lResul;
 	}
 
+	//Exercicio 3 - Complexidade O(n*n)
 	public ListaCircular inverteLista(){
 		
 		ListaCircular lInvertida = new ListaCircular();

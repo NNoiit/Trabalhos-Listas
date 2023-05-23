@@ -5,8 +5,13 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		/*/ Exercicio 2 - Complexidade O(n+m)
+		/*/ Exercicio 2 - Complexidade O(n)
 		System.out.println("Questão 2");
+
+		ListaCircular lista1 = new ListaCircular();
+        lista1.insere(1);
+        lista1.insere(3);
+        lista1.insere(5);
 
 		ListaCircular l2 = new ListaCircular();
 
@@ -16,13 +21,13 @@ public class Main
 		l2.insere(12);
 		l2.insere(15);
 
-		ListaCircular l3 = new ListaCircular();
-		l3 = l3.merge(l2);
-		l3.imprime();
+		ListaCircular lMerg = new ListaCircular();
+		lMerg = l1.merge(l2);
+		lMerg.imprime();
 		System.out.println("---------------------------");
 		/*/
 
-		/*/ Exercicio 3 - Complexidade alcançada O(n)
+		/*/ Exercicio 3 - Complexidade alcançada O(n*n)
 		System.out.println("Questão 3");
 
 		ListaCircular lnormal = new ListaCircular();
