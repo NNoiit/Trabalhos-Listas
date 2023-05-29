@@ -1,6 +1,6 @@
 public class ConjGenerico<T extends Comparable<T>>
 {
-	private Elo prim;  /* Referência para primeiro elemento. */
+	private Elo prim;  /* Referï¿½ncia para primeiro elemento. */
 
 	/* Classe auxiliar para guardar cada elemento do conjunto. */
 	private class Elo
@@ -32,7 +32,7 @@ public class ConjGenerico<T extends Comparable<T>>
 		prim = null;
 	}
 
-	/* Método privado para realizar uma cópia de um outro conjunto. */
+	/* Mï¿½todo privado para realizar uma cï¿½pia de um outro conjunto. */
 	private void copia(ConjGenerico<T> conj2)
 	{
 		Elo ult = null, q;
@@ -52,7 +52,7 @@ public class ConjGenerico<T extends Comparable<T>>
 		}
 	}
 
-	/* Método privado para realizar uma cópia de um outro conjunto. */
+	/* Mï¿½todo privado para realizar uma cï¿½pia de um outro conjunto. */
 	public void apaga()
 	{
 		for (Elo p = prim; p != null; p = prim)
@@ -62,7 +62,7 @@ public class ConjGenerico<T extends Comparable<T>>
 		}
 	}
 
-	/* Simula uma sobrecarga do operador de atribuição. */
+	/* Simula uma sobrecarga do operador de atribuiï¿½ï¿½o. */
 	public ConjGenerico<T> atribui(ConjGenerico<T> conj2){
 		if (this != conj2)
 		{
@@ -73,13 +73,13 @@ public class ConjGenerico<T extends Comparable<T>>
 		return this;
 	}
 
-	/* Testa se o conjunto está vazio. */
+	/* Testa se o conjunto estï¿½ vazio. */
 	public boolean vazio()
 	{
 		return prim == null;
 	}
 
-	/* Teste de pertinência. Usa fato de estar ordenado. */
+	/* Teste de pertinï¿½ncia. Usa fato de estar ordenado. */
 	public boolean pertence(T valor)
 	{
 		Elo p;
@@ -91,8 +91,8 @@ public class ConjGenerico<T extends Comparable<T>>
 		return true;
 	}
 
-	/* Inserção de elemento no conjunto. Usa fato de estar ordenado.
-	   Retorna false se elemento já estava lá. */
+	/* Inserï¿½ï¿½o de elemento no conjunto. Usa fato de estar ordenado.
+	   Retorna false se elemento jï¿½ estava lï¿½. */
 	public boolean insere(T valor)
 	{
 		Elo p = prim, ant = null;
@@ -117,8 +117,8 @@ public class ConjGenerico<T extends Comparable<T>>
 		return true;
 	}
 
-	/* Remoção de elemento do conjunto. Usa fato de estar ordenado.
-	   Retorna false se elemento não estava lá. */
+	/* Remoï¿½ï¿½o de elemento do conjunto. Usa fato de estar ordenado.
+	   Retorna false se elemento nï¿½o estava lï¿½. */
 	public boolean remove(T valor)
 	{
 		Elo p = prim, ant = null;
@@ -144,7 +144,7 @@ public class ConjGenerico<T extends Comparable<T>>
 		return true;
 	}
 
-	/* Método para união de conjuntos. Une conjunto com cj2 e retorna novo conjunto com a união. 
+	/* Mï¿½todo para uniï¿½o de conjuntos. Une conjunto com cj2 e retorna novo conjunto com a uniï¿½o. 
 	 * Usa fato de conjuntos estarem ordenados e percorre as listas em paralelo. */
 	public ConjGenerico<T> uniao(ConjGenerico<T> conj2)
 	{
@@ -177,7 +177,7 @@ public class ConjGenerico<T extends Comparable<T>>
 		return uniao;
 	}
 
-	/* Método para intersecao de conjuntos. Calcula intersecao do conjunto com cj2 e retorna novo conjunto com a intersecao. 
+	/* Mï¿½todo para intersecao de conjuntos. Calcula intersecao do conjunto com cj2 e retorna novo conjunto com a intersecao. 
 	 * Usa fato de conjuntos estarem ordenados e percorre as listas em paralelo. */
 	public ConjGenerico<T> intersecao(ConjGenerico<T> conj2)
 	{
@@ -236,5 +236,54 @@ public class ConjGenerico<T extends Comparable<T>>
 			System.out.print(p.dado + " ");
 		
 		System.out.println();
+	}
+
+	//QuestÃ£o 2 - Complexidade O(n)
+	public boolean eIgual(ConjGenerico<T> conj2){
+
+		ConjGenerico<T> conjuntoCorrente = this;
+
+		return comparaConjuntos(conj2.prim, conjuntoCorrente.prim);
+	}
+
+	public boolean comparaConjuntos(Elo conjC1, Elo conjC2){
+
+		if(conjC2 == null && conjC2 == null){
+			return true;
+		}
+
+		if(conjC1 != null && conjC2 == null || conjC1 == null && conjC2 != null){
+			return false;
+		}
+
+		return (conjC1.dado == conjC2.dado) && comparaConjuntos(conjC1.prox, conjC2.prox);
+	}
+
+	//QuestÃ£o 3 - Complexidade O(n)
+	public ConjGenerico<T> complementar(ConjGenerico<T> universo){
+		ConjGenerico<T> conjuntoCorrente = this;
+		
+		ConjGenerico<T> conjuntoComplemento = new ConjGenerico();
+		Elo uni = universo.prim, corrente = conjuntoCorrente.prim;
+		
+		while(corrente != null){
+
+			if(uni.dado == corrente.dado){
+				if(uni != null){
+					uni = uni.prox;
+				}
+				corrente = corrente.prox;
+			} else{
+			    
+			    conjuntoComplemento.insere(uni.dado);
+				if(uni != null){
+					uni = uni.prox;
+				}
+			}
+			if(uni == null && corrente != null){
+				return null;
+			}
+		}
+		return conjuntoComplemento;
 	}
 }
