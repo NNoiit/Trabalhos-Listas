@@ -1,5 +1,7 @@
 package filaCircularSimples;
 
+import filaCircularDupla.FilaDupla;
+
 public class Fila
 {
 	/* Atributos protected para serem usados na subclasse. */
@@ -56,25 +58,26 @@ public class Fila
 	    return false;
 	}
 
-	public static FilaDupla convert_binari(FilaDupla fila){
+	public static void convert_binari(FilaDupla fila, int N){
 		FilaDupla fila_aux = new FilaDupla(N);
-		int i = fila.remove();
+		int i = fila.remove(), x = 0;
+		int binario = 0;
 		do{
 			if(i > 0){
 				x = i % 2;
-				fila.fila.insereInicio(x);
-				i = i*0.5;
+				fila.insereInicio(x);
+				i = (int) (i*0.5);
 			}
 
 			if(i == 1){
 				binario += fila_aux.remove();
 			}
-		}while(!fila_aux.vazia())
+		}while(!fila_aux.vazia());
 
 		System.out.print(binario + " ");
 
 		if(fila.vazia()){
-			convert_binari(N);
+			convert_binari(fila, N);
 		}
 	}
 }

@@ -1,5 +1,7 @@
 package filaCircularSimples;
 
+import filaCircularDupla.FilaDupla;
+
 public class Fila
 {
 	/* Atributos protected para serem usados na subclasse. */

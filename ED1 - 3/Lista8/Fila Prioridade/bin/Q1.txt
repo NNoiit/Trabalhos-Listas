@@ -1,0 +1,16 @@
+Q1:
+
+Um Heap (ou monte) é uma estrutura de dados especializada em que os elementos são organizados de forma a permitir que o elemento de maior (ou menor) prioridade seja rapidamente acessado. O Heap é geralmente implementado como uma árvore binária completa, em que cada nó pai tem uma prioridade maior (ou menor) do que seus nós filhos.
+
+Existem dois tipos principais de Heap: Heap máximo (max heap) e Heap mínimo (min heap). Em um Heap máximo, o elemento de maior prioridade é armazenado no topo da árvore, ou seja, o pai é sempre maior ou igual aos seus filhos. Em um Heap mínimo, o elemento de menor prioridade está no topo da árvore, ou seja, o pai é sempre menor ou igual aos seus filhos.
+
+Um exemplo de uma Heap é um Heap máximo que armazena números inteiros. Aqui está um exemplo de Heap máximo representado como uma árvore binária completa:
+
+    EX:
+         8
+       /   \
+      7      5
+    /  \   /
+   6    3  2
+
+Neste exemplo, o número 8 está no topo da árvore, o que indica que possui a maior prioridade. O número 7 e o número 5 são filhos do número 8, e o número 6, o número 3 e o número 2 são filhos do número 7 e número 5. Essa estrutura permite acesso rápido ao elemento de maior prioridade, que, neste caso, é o número 8.

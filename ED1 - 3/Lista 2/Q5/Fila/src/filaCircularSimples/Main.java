@@ -9,7 +9,7 @@ public class Main
 		TesteFilaSimples fila_idosos = new TesteFilaSimples(10);
 		Scanner scanner = new Scanner(System.in);
 		int escolha, item, i = 0, a = 0;
-		char idoso;
+		String idoso = "";
 		
 		do
 		{
@@ -22,7 +22,7 @@ public class Main
 			case 1:
 				System.out.println("A pessoa é idosa? Y/N");
 				idoso = scanner.next();
-				if(idoso = 'Y'){
+				if(idoso == "Y"){
 					if ( ! fila_idosos.insere(i) )
 					System.out.println("Fila cheia.");
 					i++;
@@ -45,12 +45,7 @@ public class Main
 					System.out.println("Item " + item + " removido.");
 				else
 					System.out.println("Fila vazia.");
-				break;
-
-			case 3:
-				System.out.println("Conte�do da fila:");
-				fila.imprime();
-				break;        
+				break;       
 			}
 			
 		}while(escolha != 0);

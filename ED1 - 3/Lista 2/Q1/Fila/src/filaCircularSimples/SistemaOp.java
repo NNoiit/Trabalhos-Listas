@@ -2,7 +2,11 @@ package filaCircularSimples;
 
 public class SistemaOp extends Fila
 {
-	Fila fila_processo = new Fila(20);
+	public SistemaOp(int tam) {
+        super(tam);
+    }
+
+    Fila fila_processo = new Fila(20);
 
     public boolean inclui_precesso(String processo){
         if(!fila_processo.cheia()){

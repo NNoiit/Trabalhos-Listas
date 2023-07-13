@@ -26,7 +26,7 @@ public class Fila
 		return (n == tamanho);
 	}
 	
-	//Retiramos o elemento do início da fila
+	//Retiramos o elemento do inï¿½cio da fila
 	public int remove()
 	{
 		int elemento = Integer.MIN_VALUE;
@@ -55,4 +55,7 @@ public class Fila
 	  else
 	    return false;
 	}
+
+    public void add(String processo) {
+    }
 }
